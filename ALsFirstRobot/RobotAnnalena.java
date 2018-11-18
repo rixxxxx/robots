@@ -38,6 +38,7 @@ public class RobotAnnalena extends Robot {
     public void onHitWall(HitWallEvent event) {
     	// TODO Auto-generated method stub
     	turnLeft(180);   
+    	ahead(100);
     	scan();
     }
     
