@@ -6,18 +6,12 @@ import robocode.HitRobotEvent;
 import robocode.Robot;
 import robocode.ScannedRobotEvent;
 import static robocode.util.Utils.normalRelativeAngleDegrees;
+import java.math.*;
 
 import java.awt.*;
+import java.util.Random;
 
 
-/**
- * Fire - a sample robot by Mathew Nelson, and maintained.
- * <p>
- * Sits still. Spins gun around. Moves when hit.
- *
- * @author Mathew A. Nelson (original)
- * @author Flemming N. Larsen (contributor)
- */
 public class Intelllijrobot extends Robot {
     int dist = 50; // distance to move when we're hit
 
@@ -27,16 +21,16 @@ public class Intelllijrobot extends Robot {
     public void run() {
         // Set colors
         setBodyColor(Color.orange);
-        setGunColor(Color.orange);
+        setGunColor(Color.blue);
         setRadarColor(Color.red);
         setScanColor(Color.red);
         setBulletColor(Color.red);
 
         // Spin the gun around slowly... forever
         while (true) {
-            ahead(100);
+            ahead((int)Math.floor((Math.random() * 999) + 1));
             turnGunRight(360);
-            back(100);
+            back((int)Math.floor((Math.random() * 999) + 1));
             turnGunRight(360);
         }
     }
@@ -47,7 +41,11 @@ public class Intelllijrobot extends Robot {
     public void onScannedRobot(ScannedRobotEvent e) {
         // If the other robot is close by, and we have plenty of life,
         // fire hard!
-        if (e.getDistance() < 50 && getEnergy() > 50) {
+        if (e.getDistance() < 20 && getEnergy() > 60)
+        {
+            fire(8);
+        }
+        else if (e.getDistance() < 50 && getEnergy() > 50) {
             fire(3);
         } // otherwise, fire 1.
         else {
@@ -64,7 +62,7 @@ public class Intelllijrobot extends Robot {
         turnRight(normalRelativeAngleDegrees(90 - (getHeading() - e.getHeading())));
 
         ahead(dist);
-        dist *= -1.2;
+        dist *= -1.0;
         scan();
     }
 
