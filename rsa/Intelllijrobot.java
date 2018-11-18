@@ -64,7 +64,7 @@ public class Intelllijrobot extends Robot {
         turnRight(normalRelativeAngleDegrees(90 - (getHeading() - e.getHeading())));
 
         ahead(dist);
-        dist *= -1;
+        dist *= -1.2;
         scan();
     }
 
