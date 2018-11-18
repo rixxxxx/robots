@@ -29,9 +29,9 @@ public class Intelllijrobot extends Robot {
         // Spin the gun around slowly... forever
         while (true) {
             ahead((int)Math.floor((Math.random() * 999) + 1));
-            turnGunRight(360);
+            turnGunRight(120);
             back((int)Math.floor((Math.random() * 999) + 1));
-            turnGunRight(360);
+            turnGunRight(120);
         }
     }
 
