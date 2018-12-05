@@ -1,5 +1,8 @@
 package rixsFirstRobot;
 import robocode.*;
+import robocode.Robot;
+
+import java.awt.*;
 //import java.awt.Color;
 
 // API help : http://robocode.sourceforge.net/docs/robocode/robocode/Robot.html
@@ -13,6 +16,9 @@ public class RixsFirstRobot extends Robot
 	 * run: MyfirstRobot's default behavior
 	 */
 	public void run() {
+
+		setAllColors(new Color(102, 0, 102));
+
 		// Initialization of the robot should be put here
 
 		// After trying out your robot, try uncommenting the import at the top,
