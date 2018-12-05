@@ -8,6 +8,7 @@ public class RobotAnnalena extends Robot {
 	public void run() {
 		
 		setBodyColor(Color.green);
+		setBulletColor(Color.PINK);
 		
         while (true) {
         	ahead(100);
